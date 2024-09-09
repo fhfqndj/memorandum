@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"memorandum-backend/internal/app"
 )
 
 func main() {
-	fmt.Printf("Hello World")
+	app.Run("8080")
 }
