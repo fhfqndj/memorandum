@@ -1,7 +1,7 @@
 version: '3.8'
 
 services: 
-  app:
+  backend:
     build: /backend
     ports:
       - "8080:8080"
@@ -10,10 +10,12 @@ services:
       - ./tmp:/tmp
     depends_on:
       - postgres
+    env_file:
+      - .env
 
   postgres:
     image: postgres:15
     env_file:
-      - dev.env
+      - .env
     ports:
       - "5432:5432"
